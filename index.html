@@ -87,11 +87,12 @@
                 text-align: center;
                 padding: 2rem 1rem;
             }
-            footer a {
+            footer quicklinks a {
                 font-family: "Lato", Helvetica;
                 font-size: 0.8em;
+                color: white;
             }
-            footer a i:before {
+            footer quicklinks a i:before {
                 font-size: 1.5em;
                 vertical-align: middle;
                 margin-right: 0.1em;
@@ -111,7 +112,7 @@
             }
             quicklinks a {
                 text-decoration: none;
-                color: #FFF;
+                color: #444444;
                 margin: 0 0.3em;
             }
             avatar quicklinks {
@@ -120,24 +121,24 @@
                 bottom: 0em;
                 left: 0;
                 padding: 1em 1em 0.8em 1em; /* for text-shadow */
-                overflow: hidden;
+                overflow: visible;
+                font-family: "Lato", Helvetica;
             }
             avatar quicklinks a {
                 position: relative;
-                top: 2em;
+                top: 1em;
                 transition: top 0.1s ease-out,
-                opacity 0.1s linear;
+                            opacity 0.05s linear;
                 text-shadow: 0 0 4px #FFF,
-                0 0 4px #FFF,
-                0 0 4px #FFF;
+                             0 0 4px #FFF,
+                             0 0 4px #FFF;
                 opacity: 0;
                 margin: 0 0.1em;
-                color: #444;
             }
             avatar:hover quicklinks a {
                 top: 0em;
                 transition: top 0.2s cubic-bezier(.14,1.43,.47,1.28),
-                opacity 0.1s linear;
+                            opacity 0.1s linear;
                 opacity: 1;
             }
             avatar quicklinks a:nth-child(2) {
@@ -204,6 +205,41 @@
                     font-size: 0.8em;
                 }
             }
+
+            quicklinks a[title] {
+                display: inline-flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 20px;
+                margin-top: -2rem;
+            }
+            quicklinks a[title]:after {
+                content: attr(title);
+                justify-content: center;
+                position: relative;
+                z-index: 1;
+                line-height: 2rem;
+                white-space: nowrap;
+                transform: scale(0);
+                display: inline-flex;
+                opacity: 0;
+                padding: 0 0.6rem;
+                margin-top: -3.7em;
+                border-radius: 4px;
+                text-shadow: none;
+                transition: opacity 0.1s ease-in,
+                          transform 0.1s ease-in;
+                font-size: 1rem;
+                background-color: rgba(0, 0, 0, 0.6);
+                color: #FFF;
+            }
+            quicklinks a[title]:hover:after {
+                transform: scale(1);
+                opacity: 1;
+                transition: opacity 0.1s ease-out,
+                          transform 0.1s ease-out;
+            }
         </style>
     </head>
     <body>
@@ -212,7 +248,7 @@
                 <a title="GitHub" href="https://github.com/jneubrand">
                     <i class="fa fa-github-alt"></i>
                 </a>
-                <a title="Pebble Dev Slack" href="https://pebbledev.slack.com/team/johannesn">
+                <a title="Slack (pebble-dev)" href="https://pebbledev.slack.com/team/johannesn">
                     <i class="fa fa-slack"></i>
                 </a>
             </quicklinks>
@@ -252,10 +288,10 @@
                 <a title="GitHub" href="https://github.com/jneubrand">
                     <i class="fa fa-github-alt"></i>
                 </a>
-                <a title="Pebble Dev Slack" href="https://pebbledev.slack.com/team/johannesn">
+                <a title="Slack (pebble-dev)" href="https://pebbledev.slack.com/team/johannesn">
                     <i class="fa fa-slack"></i>
                 </a> ·
-                <a title="jneubrand.github.io" href="https://jneubrand.github.io">
+                <a href="https://jneubrand.github.io">
                     jneubrand.github.io
                 </a>
             </quicklinks>
